@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+    Особистий кабінет
+{% endblock %}
+{% block content %}
+    <div class="container" style="max-width: 1140px; margin: 0 auto; padding-top: 20px; font-family: 'Segoe UI', sans-serif;">
+        <div class="row">
+
+            <div class="col-md-3 mb-4">
+                <div style="background-color: #ffffff; border: 1px solid #ccc; border-radius: 4px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); height: fit-content;">
+                    {% block left_navbar %}
+                        <h5 style="color: #1c1c1c; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #edeff1; text-align: center;">
+                            Функції профілю
+                        </h5>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px;">
+                            <li>
+                                <a href="{% url 'blog:favourite_posts' %}" style="display: block; padding: 8px 12px; color: #787c7e; font-weight: 500; font-size: 14px; text-decoration: none; border-radius: 4px; transition: background 0.2s, color 0.2s;" onmouseover="this.style.backgroundColor='#f6f7f8'; this.style.color='#1c1c1c'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#787c7e'">
+                                    📁 Мої пости
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'blog:favourite_posts' %}" style="display: block; padding: 8px 12px; color: #787c7e; font-weight: 500; font-size: 14px; text-decoration: none; border-radius: 4px; transition: background 0.2s, color 0.2s;" onmouseover="this.style.backgroundColor='#f6f7f8'; this.style.color='#1c1c1c'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#787c7e'">
+                                    ⭐ Обрані пости
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'blog:post_add' %}" style="display: block; padding: 8px 12px; color: #787c7e; font-weight: 500; font-size: 14px; text-decoration: none; border-radius: 4px; transition: background 0.2s, color 0.2s;" onmouseover="this.style.backgroundColor='#f6f7f8'; this.style.color='#1c1c1c'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#787c7e'">
+                                    ➕ Додати пост
+                                </a>
+                            </li>
+                            <li>
+                                 <a href="{% url 'blog:edit_profile' %}" style="display: block; padding: 8px 12px; color: #787c7e; font-weight: 500; font-size: 14px; text-decoration: none; border-radius: 4px; transition: background 0.2s, color 0.2s;" onmouseover="this.style.backgroundColor='#f6f7f8'; this.style.color='#1c1c1c'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#787c7e'">
+                                     👤 Мій профіль
+                                </a>
+                            </li>
+                        </ul>
+                    {% endblock %}
+                </div>
+            </div>
+
+            <div class="col-md-9 account-content">
+                {% block account_content %}
+                {% endblock %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
